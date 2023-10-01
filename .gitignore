@@ -1,0 +1,4 @@
+venv
+imgs_teste
+__pycache__
+data/*.txt

@@ -1,0 +1,31 @@
+config1 = ['#972d79', '#a63285', '#c44b74', '#d3586b', '#e16462', '#f2844b', '#fca636', '#fcce25', '#f0f921', '#ffffff']
+config2 = ['#420a68', '#6a176e', '#932667', '#bc3754', '#dd513a', '#f37819', '#fca50a', '#f6d746', '#fcffa4', '#ffffff']
+config3 = ['#601564', '#6a176e', '#932667', '#bc3754', '#dd513a', '#f37819', '#fca50a', '#f6d746', '#fcffa4', '#ffffff']
+config4 = ['#601564', '#7a1e66', '#932667', '#bc3754', '#dd513a', '#f37819', '#fca50a', '#f6d746', '#fcffa4', '#ffffff']
+config5 = ['#7a2055', '#86235e', '#932667', '#bc3754', '#dd513a', '#f37819', '#fca50a', '#f6d746', '#fcffa4', '#ffffff']
+config6 = ['#8d293f', '#9b2d45', '#ab324c', '#bc3754', '#dd513a', '#f37819', '#fca50a', '#f6d746', '#fcffa4', '#ffffff']
+config7 = ['#3d0075', '#6c0c9d', '#8e1994',  '#cd3c60', '#dd6b36', '#f09d38', '#ffcb40', '#ffe45c','#FFF2AE', '#ffffff']
+config8 = ['#420a68', '#6a176e', '#932667',  '#bc3754', '#dd513a', '#f37819', '#fca50a', '#f6d746','#fcffa4', '#ffffff']
+
+from matplotlib import cm
+from matplotlib.colors import ListedColormap
+import numpy as np
+
+our_cmap = cm.get_cmap('inferno', 11)
+newcolors = our_cmap(np.linspace(0, 1, 11))
+newcolors = newcolors[2:]
+
+
+black = np.array([0.0, 0.0, 0.0, 1.0])
+
+our_cmap = ListedColormap(newcolors)
+bounds = [0.0, 0.06, 6, 60, 600, 3000, 6000, 24000, 45000, 120000]
+norm = colors.BoundaryNorm(bounds, our_cmap.N)
+
+gradient = np.linspace(0, 1, 10)
+gradient = np.vstack((gradient, gradient))
+plt.imshow(gradient, aspect='auto', cmap=our_cmap)
+plt.axis('off')
+plt.show()
+
+#inferno
