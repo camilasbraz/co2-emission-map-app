@@ -17,7 +17,7 @@ st.sidebar.image(imagem_url)
 
 with st.sidebar.expander("About this app"):
     st.write(
-        "EDA Analysis automatized using Streamlit and the ydata_profiling package.\n\n"
+        "CO2 Emissions Worldwide Maps through the years app.\n\n"
         "Source code here: [GitHub Repository](https://github.com/camilasbraz/co2-emission-map-app)\n\n"
         "Contact: [camilabraz03@gmail.com](mailto:camilabraz03@gmail.com)\n\n"
         "Application and code under the MIT License"
