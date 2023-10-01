@@ -33,8 +33,9 @@ with st.sidebar.expander("About the datasets"):
 
         "Crippa, M., Guizzardi, D., Banja, M., Solazzo, E., Muntean, M., Schaaf, E., Pagani, F., Monforti-Ferrario, F., Olivier, J., Quadrelli, R., Risquez Martin, A., Taghavi-Moharamli,\
         P., Grassi, G., Rossi, S., Jacome Felix Oom, D., Branco, A., San-Miguel-Ayanz, J. and Vignati, E., CO2 emissions of all world countries – JRC/IEA/PBL 2022 Report, EUR 31182 EN,  \
-        Publications Office of the European Union, Luxembourg, 2022, [doi:10.2760/730164, JRC130363](doi:10.2760/730164, JRC130363).\n\n\
-        Crippa, M., Guizzardi, D., Solazzo, E., Muntean, M., Schaaf, E., Monforti-Ferrario, F., Banja, M., Olivier, J.G.J., Grassi, G., Rossi, S., Vignati, E.,GHG emissions \
+        Publications Office of the European Union, Luxembourg, 2022, [doi:10.2760/730164, JRC130363](doi:10.2760/730164, JRC130363).\n\n"
+        
+        "Crippa, M., Guizzardi, D., Solazzo, E., Muntean, M., Schaaf, E., Monforti-Ferrario, F., Banja, M., Olivier, J.G.J., Grassi, G., Rossi, S., Vignati, E.,GHG emissions \
         of all world countries - 2021 Report, EUR 30831 EN, Publications Office of the European Union, Luxembourg, 2021, ISBN 978-92-76-41547-3, [doi:10.2760/173513](doi:10.2760/173513), JRC126363.\n\n"
     )
 
