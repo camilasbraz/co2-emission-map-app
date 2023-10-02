@@ -7,15 +7,15 @@ favicon_url = "assets/favicon.ico"
 imagem_url = 'assets/logo.png'
 
 # Configuração da página
-st.set_page_config(page_icon=favicon_url, page_title="CO2 Emission Worldwide | Camila Braz")
+st.set_page_config(page_icon=favicon_url, page_title="Emissão de CO₂ mundial | Camila Braz")
 
 # Create a Streamlit app
-st.title("CO2 Emissions Worldwide: Map analysis through the years.")
+st.title("Emissão de CO$_2$ mundial: análise histórica por meio de mapas.")
 st.sidebar.image(imagem_url)
 # , width = 300
 
 
-with st.sidebar.expander("About this app"):
+with st.sidebar.expander("Sobre a aplicação"):
     st.write(
         "CO2 Emissions Worldwide Maps through the years app.\n\n"
         "Source code here: [GitHub Repository](https://github.com/camilasbraz/co2-emission-map-app)\n\n"
@@ -24,7 +24,7 @@ with st.sidebar.expander("About this app"):
     )
 
 
-with st.sidebar.expander("About the datasets"):
+with st.sidebar.expander("Sobre o conjunto de dados"):
     st.write(
         "[EDGAR](https://edgar.jrc.ec.europa.eu/dataset_ghg70#sources) is a multipurpose, independent, global database of anthropogenic emissions of greenhouse gases and air pollution on Earth. \
         EDGAR provides independent emission estimates compared to what reported by European Member States or by Parties under the United Nations Framework Convention\
@@ -41,7 +41,7 @@ with st.sidebar.expander("About the datasets"):
 
 
 
-st.write("\n\n\n\n#### Select a Year")
+st.write("\n\n\n\n#### Selecione um ano")
 
 selected_year = st.slider("", min_value=1970, max_value=2021)
 
@@ -50,18 +50,32 @@ image_url = f'maps/co2_map_{selected_year}.png'
 full_page_image = Image.open(image_url)
 st.image(image_url)
 
-# Convert the image to bytes
-img_bytes = io.BytesIO()
-full_page_image.save(img_bytes, format='PNG')
+processing_complete = False
+if not processing_complete:
+    st.write("Processando imagem para download...")
+    progress_bar = st.empty()
+    progress_percent = 0
+    progress_percent += 40
+    progress_bar.progress(progress_percent)
+
+    # Convert the image to bytes
+    img_bytes = io.BytesIO()
+    full_page_image.save(img_bytes, format='PNG')
+
+    # Atualize a variável de controle quando o processamento estiver concluído
+    processing_complete = True
+
+    progress_percent += 60
+    progress_bar.progress(progress_percent)
+
+    # Atualize o texto da barra de progresso
+    # progress_bar.text("Processamento concluído")
+
 
 # Create a download button for the image
 st.download_button(
-    label="Download the map",
+    label="Baixar o mapa",
     data=img_bytes.getvalue(),
     key="download_button",
     file_name=f"co2_emission_map_{selected_year}_camilasbraz.png",
 )
-
-
-
-

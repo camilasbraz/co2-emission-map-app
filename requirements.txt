@@ -5,3 +5,5 @@ shapely
 cartopy
 streamlit
 polars
+imageio
+selenium
