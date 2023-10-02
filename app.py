@@ -40,7 +40,10 @@ with st.sidebar.expander("About the datasets"):
     )
 
 
-selected_year = st.slider("Select a Year", min_value=1970, max_value=2021)
+
+st.write("\n\n\n\n#### Select a Year")
+
+selected_year = st.slider("", min_value=1970, max_value=2021)
 
 image_url = f'maps/co2_map_{selected_year}.png'
 
